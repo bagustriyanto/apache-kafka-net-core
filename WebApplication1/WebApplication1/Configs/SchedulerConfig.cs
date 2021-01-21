@@ -22,7 +22,7 @@ namespace WebApplication1.Configs
         {
             _backgroundJobClient.Schedule(() => Console.WriteLine($"Hangfire test. Run at: {DateTime.Now}"), TimeSpan.FromMinutes(1));
             _recurringJobManager.RemoveIfExists("post-fakejson");
-            //_recurringJobManager.AddOrUpdate<RequestService>("post-fakejson", x => x.PostToFakeJson(), Cron.Minutely);
+            _recurringJobManager.AddOrUpdate<RequestService>("post-fakejson", x => x.PostToFakeJson(), Cron.Minutely);
         }
     }
 }

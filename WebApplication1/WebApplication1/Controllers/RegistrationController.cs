@@ -45,15 +45,15 @@ namespace WebApplication1.Controllers
                 }
 
                 //Serialize 
-                string serializedOrder = JsonConvert.SerializeObject(registration);
+                string serializedRegistration = JsonConvert.SerializeObject(registration);
 
                 Console.WriteLine("========");
                 Console.WriteLine("Info: RegistrationController => Post => Recieved a new registration user:");
-                Console.WriteLine(serializedOrder);
+                Console.WriteLine(serializedRegistration);
                 Console.WriteLine("=========");
 
                 var producer = new ProducerWrapper(_producerConfig, "new-user");
-                await producer.WriteMessage(serializedOrder);
+                await producer.WriteMessage(serializedRegistration);
 
                 return Ok("Your registartion is success");
             } catch(Exception ex)

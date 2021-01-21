@@ -38,7 +38,7 @@ namespace WebApplication1.Services
                     RegistrationModel registration = JsonConvert.DeserializeObject<RegistrationModel>(regsitrationMessage);
 
                     //TODO:: Process New User
-                    Console.WriteLine($"Info: RequestBackgroundService => Processing the new user with email {registration.Id}");
+                    Console.WriteLine($"Info: RequestBackgroundService => Recieved response with userID: {registration.Id}");
                 }
             }
 
